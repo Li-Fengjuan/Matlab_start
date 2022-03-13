@@ -1,0 +1,73 @@
+;array, vector
+x=[2 3} x=[2;3]
+
+x=1:3
+x= 1:4 ;create array
+x=1:0.5:5  ;创建一个名为 x 的行向量，该向量以 1 开头，以 5 结尾，每个元素的间距为 0.5。
+x=3:2:13
+
+linspace(first,last,number_of_elements)
+x=linspace(1,10,5) ;创建一个名为 x 的行向量，该向量以 1 开头，以 10 结尾，共包含 5 个元素。
+
+x=x' ;使用转置运算符将 x 从行向量转置为列向量。
+x=(5:2:9)' ;在一条命令中，创建一个名为 x 的列向量，该向量以 5 开头，以 9 结尾，并且元素之间的间隔为 2。
+x=linspace(1,2*pi, 100)  ;创建从 1 到 2π 的等间距向量，其中包含 100 个元素
+
+
+;matrix
+x=rand(5) ;创建一个名为 x 的变量，该变量是一个 5×5 的随机数矩阵。
+x=rand(5,1) ;使用 rand 创建一个包含 5 行 1 列的数组。将结果赋给名为 x 的变量。
+x=zeros(6,3) ;使用 zeros 函数创建一个包含 6 行 3 列 (6×3) 的全零矩阵。将结果赋给名为 x 的变量。
+
+size(x);有矩阵的大小
+rand(size(x));使用一行代码创建与现有矩阵大小相同的矩阵。
+
+;index
+load datafile
+data
+x=data(6,3) ;创建一个名为 x 的变量，其值为变量 data 中位于第 6 行第 3 列的值
+x=data(end,3) ;使用 end 关键字获取变量 data 的最后一行第三列的值。将该值赋给一个名为 x 的变量
+x=data(end-1,3) //创建标量变量 x，其值为 data 的倒数第二 (end-1) 行第三列的值。
+y=8
+x=data(y);如果只对一个矩阵使用一种索引，它将按顺序从上到下遍历每列。试着用一种索引提取 data 的第八个元素。您也可以使用变量作为索引。试着创建一个变量 y，并用 y 作为 data 的索引。
+
+
+density=data(:,2) ;创建一个名为 density 的变量，其中包含名为 data 的矩阵中第 2 列上的所有元素。
+volumes=data(:,end-1:end) ;创建一个名为 volumes 的变量，其中包含 data 的最后两列的所有元素。
+p=density(6) 
+p=density(2:5)
+
+vr=round(va) ;使用 round 函数创建一个名为 vr 的变量，其中包含四舍五入为整数的平均体积 va。
+vmax=max(va)
+mass=density.*va ;而 .* 运算符执行按元素乘法，允许您将两个大小相同的数组的对应元素相乘。
+
+x=randi([1,20],5,7)
+help
+doc randi
+
+
+plot(sample,mass1)
+
+doc Specify Line and Marker Appearance in Plots
+plot(sample,mass2,"r*")
+hold on
+plot(sample,mass1,"ks")
+hold off
+plot(v1); 当您单独绘制一个向量时，MATLAB 会使用向量值作为 y 轴数据，并将 x 轴数据的范围设置为从 1 到 n（向量中的元素数目）
+plot(v1,"LineWidth",5)
+MATLAB Plot Gallery
+histogram(density,"FaceColor","y")
+title("Sample Mass")
+ylabel("Mass (g)")
+legend("Exp A","Exp B")
+bar(data(3,:))
+title("Sample "+sample(3), " Data")
+
+
+
+
+
+
+
+
+
