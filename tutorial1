@@ -65,6 +65,27 @@ title("Sample "+sample(3), " Data")
 
 
 
+Working with Tables
+Instructions are in the task pane to the left. Complete and submit each task one at a time.
+
+load datafile
+elements
+
+Task 1
+d=elements.Density
+
+
+Task 2 & 3
+elements.Mass=elements.Density.*elements.Volume1
+elements=sortrows(elements,'Mass')
+
+Further Practice
+top3=elements(1:3,:)
+
+
+
+
+
 
 
 
